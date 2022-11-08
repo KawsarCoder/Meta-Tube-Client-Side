@@ -3,17 +3,17 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer class="p-4 bg-white sm:p-6 dark:bg-gray-900">
+      <footer class="p-4 bg-gray-300 sm:p-6 dark:bg-gray-900">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
             <a href="/" class="flex items-center">
               <img
-                src="https://flowbite.com/docs/images/logo.svg"
+                src="https://i.ibb.co/5FcP0SY/attachment-134189141-removebg-preview-removebg-preview.png"
                 class="mr-3 h-8"
                 alt="FlowBite Logo"
               />
               <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                Flowbite
+                Meta Tube
               </span>
             </a>
           </div>
