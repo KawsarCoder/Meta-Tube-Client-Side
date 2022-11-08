@@ -83,7 +83,7 @@ const Header = () => {
                       href="/"
                       className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                     >
-                      Dashboard
+                      My reviews
                     </a>
                   </li>
                   <li>
@@ -91,7 +91,7 @@ const Header = () => {
                       href="/"
                       className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                     >
-                      Settings
+                      Add service
                     </a>
                   </li>
                   <li>
@@ -105,7 +105,7 @@ const Header = () => {
                   <li>
                     <button
                       onClick={logOut}
-                      className="text-white px-3 rounded-md mx-3 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg  dark:shadow-blue-800/80 "
+                      className="text-white px-2 py-1 my-3 rounded-md mx-3 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg  dark:shadow-blue-800/80 "
                     >
                       log out
                     </button>
@@ -139,8 +139,8 @@ const Header = () => {
             <>
               <div className="flex user-wrapper items-center md:order-2">
                 <Link to={"/login"}>
-                  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
-                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-blue-50 dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                  <button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
+                    <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-blue-50 dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                       Login
                     </span>
                   </button>
@@ -163,16 +163,16 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="/"
+                <Link
+                  to="/blog"
                   className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
-                  About
-                </a>
+                  Blog
+                </Link>
               </li>
               <li>
                 <Link
-                  to="/service"
+                  to="/services"
                   className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Services
@@ -191,7 +191,7 @@ const Header = () => {
                   href="/"
                   className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
-                  Contact
+                  About
                 </a>
               </li>
             </ul>
