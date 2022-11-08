@@ -1,0 +1,50 @@
+[
+  {
+    "id": "01",
+    "title": "SEO Optimized",
+    "img": "https://mangools.com/blog/wp-content/uploads/2019/07/learn-seo-new-featured.png",
+    "description": "Seo service must be needed",
+    "price": "20$",
+    "rating": "4.5"
+  },
+  {
+    "id": "02",
+    "title": "Graphics",
+    "img": "https://mediablog.cdnpk.net/sites/9/2021/12/An-Introduction-To-Graphic-Design-Part-1.jpg",
+    "description": "Seo service must be needed",
+    "price": "20$",
+    "rating": "4.5"
+  },
+  {
+    "id": "03",
+    "title": "Web Development",
+    "img": "https://www.postingtree.com/wp-content/uploads/2022/07/Web-Development.jpg",
+    "description": "Seo service must be needed",
+    "price": "20$",
+    "rating": "4.5"
+  },
+  {
+    "id": "04",
+    "title": "Digital Marketing",
+    "img": "https://coderstrustbd.com/wp-content/uploads/2021/06/dgm-n.jpg",
+    "description": "Seo service must be needed",
+    "price": "20$",
+    "rating": "4.5"
+  },
+  {
+    "id": "05",
+    "title": "Google ads",
+    "img": "https://www.digitalchef.com.au/wp-content/uploads/2022/06/Google-Ads.png",
+    "description": "Seo service must be needed",
+    "price": "20$",
+    "rating": "4.5"
+  },
+  {
+    "id": "06",
+    "title": "App Development",
+    "img": "https://www.vaival.com/wp-content/uploads/2021/01/vaival-application.png",
+    "description": "Seo service must be needed",
+    "price": "20$",
+    "rating": "4.5"
+  }
+]
