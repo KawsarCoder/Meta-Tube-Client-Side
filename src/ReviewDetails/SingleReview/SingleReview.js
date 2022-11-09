@@ -1,7 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const SingleReview = ({ review, handleDelete }) => {
-  const { _id, serviceName, message } = review;
+const SingleReview = ({
+  review,
+  handleDelete,
+  // handleUpdate
+}) => {
+  const {
+    _id,
+    serviceName,
+    message,
+    // status
+  } = review;
 
   return (
     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -13,20 +23,25 @@ const SingleReview = ({ review, handleDelete }) => {
         {message}
       </th>
       <td class="py-4 px-6">
-        <a
-          href="/"
+        <Link to={`/reviews/${_id}`}>
+          <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+            Edit
+          </button>
+        </Link>
+        {/* <button
+          onClick={() => handleUpdate(_id)}
           class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
         >
-          Edit
-        </a>
+          {status ? status : "pending"}
+        </button> */}
       </td>
       <td class="py-4 px-6">
-        <span
+        <button
           onClick={() => handleDelete(_id)}
           class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
         >
           Delete
-        </span>
+        </button>
       </td>
     </tr>
   );
