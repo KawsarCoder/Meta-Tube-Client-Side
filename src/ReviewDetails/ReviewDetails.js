@@ -5,12 +5,31 @@ import SingleReview from "./SingleReview/SingleReview";
 const ReviewDetails = () => {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [user?.email]);
-  console.log(reviews);
+
+  const handleDelete = (id) => {
+    const proccess = window.confirm("Are sure to remove this review");
+    if (proccess) {
+      fetch(`http://localhost:5000/reviews/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert("Successfully deleted");
+            const remaining = reviews.filter((rev) => rev._id !== id);
+            setReviews(remaining);
+          }
+        });
+    }
+  };
+
   return (
     <div>
       <h1>Your all reviews</h1>
@@ -36,7 +55,11 @@ const ReviewDetails = () => {
               </thead>
               <tbody>
                 {reviews?.map((review) => (
-                  <SingleReview key={review._id} review={review}></SingleReview>
+                  <SingleReview
+                    key={review._id}
+                    review={review}
+                    handleDelete={handleDelete}
+                  ></SingleReview>
                 ))}
               </tbody>
             </table>

@@ -1,11 +1,7 @@
 import React from "react";
 
-const SingleReview = ({ review }) => {
+const SingleReview = ({ review, handleDelete }) => {
   const { _id, serviceName, message } = review;
-
-  const handleDelete = (id) => {
-    const proccess = window.confirm("Are sure to remove this review");
-  };
 
   return (
     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -25,13 +21,12 @@ const SingleReview = ({ review }) => {
         </a>
       </td>
       <td class="py-4 px-6">
-        <a
-          href="/"
+        <span
           onClick={() => handleDelete(_id)}
           class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
         >
           Delete
-        </a>
+        </span>
       </td>
     </tr>
   );

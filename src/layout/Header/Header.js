@@ -22,7 +22,6 @@ const Header = () => {
       setcollapsBtn(true);
     }
   };
-  console.log(user);
   return (
     <div>
       <nav className="bg-blue-50 border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900 border border-b-blue-200">
