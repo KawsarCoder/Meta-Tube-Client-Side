@@ -31,9 +31,9 @@ const Reviews = () => {
       body: JSON.stringify(review),
     })
       .then((res) => res.json())
-      .then((data) => { 
+      .then((data) => {
         console.log(data);
-        if (data.acknowledge) {
+        if (data.acknowledged) {
           alert("Review submitted successfully");
           form.reset();
         }
