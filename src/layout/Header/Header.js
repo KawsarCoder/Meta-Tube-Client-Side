@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+// import Reviews from "../../Reviews/Reviews";
 
 const Header = () => {
   const [collapsBtn, setcollapsBtn] = useState(false);
@@ -21,7 +22,7 @@ const Header = () => {
       setcollapsBtn(true);
     }
   };
-
+  console.log(user);
   return (
     <div>
       <nav className="bg-blue-50 border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900 border border-b-blue-200">

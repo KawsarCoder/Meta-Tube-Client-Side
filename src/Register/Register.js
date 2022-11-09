@@ -14,7 +14,7 @@ const Register = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const photoURL = form.photo.value;
+    const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
 
@@ -45,7 +45,7 @@ const Register = () => {
     <div className="grid grid-cols-12">
       <form
         onSubmit={userSubmit}
-        className="lg:col-start-4 lg:col-end-10 md:col-start-4 md:col-end-10 sm:col-start-2 sm:col-end-11 col-start-1 col-end-13 bg-slate-100 p-10 rounded-lg"
+        className="lg:col-start-4 lg:col-end-10 md:col-start-4 md:col-end-10 sm:col-start-2 sm:col-end-11 col-start-1 col-end-13 bg-blue-50 p-10 rounded-lg my-5"
       >
         <div className="relative z-0 mb-6 w-full group">
           <input
@@ -95,40 +95,36 @@ const Register = () => {
             Confirm password
           </label>
         </div>
-        <div className="grid md:grid-cols-2 md:gap-6">
-          <div className="relative z-0 mb-6 w-full group">
-            <input
-              type="text"
-              name="name"
-              id="first_name"
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              placeholder=""
-            />
-            <label
-              htmlFor="name"
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
-              Name
-            </label>
-          </div>
+        <div className="relative z-0 mb-6 w-full group">
+          <input
+            type="text"
+            name="name"
+            id="first_name"
+            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=""
+          />
+          <label
+            htmlFor="name"
+            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >
+            Name
+          </label>
         </div>
-        <div className="grid md:grid-cols-2 md:gap-6">
-          <div className="relative z-0 mb-6 w-full group">
-            <input
-              type="tel"
-              pattern="[0-9]{11}"
-              name="phone"
-              id="phone"
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              placeholder=""
-            />
-            <label
-              htmlFor="phone"
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
-              Phone number (enter 11 digit phone number)
-            </label>
-          </div>
+        <div className="relative z-0 mb-6 w-full group">
+          <input
+            type="tel"
+            pattern="[0-9]{11}"
+            name="phone"
+            id="phone"
+            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=""
+          />
+          <label
+            htmlFor="phone"
+            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >
+            Phone number (enter 11 digit phone number)
+          </label>
         </div>
 
         <div>
@@ -140,7 +136,7 @@ const Register = () => {
           </label>
           <input
             type="url"
-            name="photo"
+            name="photoURL"
             id="website"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Photo url"
@@ -175,7 +171,7 @@ const Register = () => {
           type="submit"
           id="submit"
           name="submit"
-          className="block mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-10 py-2.5 text-center mr-2 mb-2"
         >
           Submit
         </button>
