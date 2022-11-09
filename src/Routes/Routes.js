@@ -5,8 +5,6 @@ import Login from "../Login/Login";
 import Main from "../Main/Main";
 import Register from "../Register/Register";
 import Services from "../Services/Services";
-// import Reviews from "../Reviews/Reviews";
-// import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import ServiceDetails from "../ServiceDetails/ServiceDetails";
 import ReviewDetails from "../ReviewDetails/ReviewDetails";
 import UpdateReview from "../UpdateReview/UpdateReview";
