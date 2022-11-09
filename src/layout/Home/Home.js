@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Services from "../../Services/Services";
+import Card from "../../Card/Card";
 import Carousel from "./Carousel/Carousel";
 
 const Home = () => {
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/services")
+      .then((res) => res.json())
+      .then((data) => setServices(data).limit(3));
+  }, []);
   return (
     <div>
       <Carousel></Carousel>
-      <Services></Services>
+      {services.length < 4 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 my-5 lg:grid-cols-3 gap-5">
+          {services.map((service) => (
+            <Card key={service._id} service={service}></Card>
+          ))}
+        </div>
+      ) : (
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 my-5 lg:grid-cols-3 gap-5">
+            {services.slice(0, 3).map((service) => (
+              <Card key={service._id} service={service}></Card>
+            ))}
+          </div>
+        </>
+      )}
+
       <div className="text-center my-5">
         <Link to="/services">
           <button

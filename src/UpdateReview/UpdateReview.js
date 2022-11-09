@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { useLoaderData, Link } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 const UpdateReview = () => {
   const currentReview = useLoaderData();
-  const [reviews, setReviews] = useState(currentReview.message);
-  //   console.log(currentReview);
+  const [reviews, setReviews] = useState(currentReview?.message);
   const handleUpdateReview = (event) => {
     event.preventDefault();
     fetch(`http://localhost:5000/reviews/${currentReview?._id}`, {
@@ -16,7 +15,10 @@ const UpdateReview = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data.acknowledged) {
+          alert("Service added successfully");
+          event.target.reset();
+        }
       });
   };
 
@@ -52,14 +54,13 @@ const UpdateReview = () => {
               placeholder="Leave a comment..."
             ></textarea>
           </div>
-          <Link to={`/reviews/${currentReview._id}`}>
-            <button
-              type="submit"
-              className="text-cyan-600 my-6 hover:text-white border border-cyan-500 hover:bg-cyan-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
-            >
-              Update Review
-            </button>
-          </Link>
+
+          <button
+            type="submit"
+            className="text-cyan-600 my-6 hover:text-white border border-cyan-500 hover:bg-cyan-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+          >
+            Update Review
+          </button>
         </form>
       </div>
     </div>
