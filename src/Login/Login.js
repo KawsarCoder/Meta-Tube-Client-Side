@@ -17,7 +17,24 @@ const Login = () => {
     userLogin(googleProvider)
       .then((result) => {
         const user = result.user;
-        navigate(from, { replace: true });
+        const currentUser = {
+          email: user.email,
+        };
+
+        //get jwt token
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("user-token", data.token);
+            setError("");
+            navigate(from, { replace: true });
+          });
       })
       .catch((error) => console.error(error));
   };
@@ -30,13 +47,28 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
-        form.reset();
-        setError("");
-        navigate(from, { replace: true });
+        const currentUser = {
+          email: user.email,
+        };
+
+        //get jwt token
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("user-token", data.token);
+            form.reset();
+            setError("");
+            navigate(from, { replace: true });
+          });
       })
       .catch((e) => {
-        console.log(e);
+        console.error(e);
 
         setError(e.message);
       });

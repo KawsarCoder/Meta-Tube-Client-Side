@@ -3,14 +3,25 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import SingleReview from "./SingleReview/SingleReview";
 
 const ReviewDetails = () => {
-  const { user } = useContext(AuthContext);
+  const { user, userLogOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => setReviews(data));
-  }, [user?.email]);
+    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("user-token")}`,
+      },
+    })
+      .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+          userLogOut();
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setReviews(data);
+      });
+  }, [user?.email, userLogOut]);
 
   const handleDelete = (id) => {
     const process = window.confirm("Are sure to remove this review");
@@ -61,7 +72,6 @@ const ReviewDetails = () => {
                         key={review._id}
                         review={review}
                         handleDelete={handleDelete}
-                        // handleUpdate={handleUpdate}
                       ></SingleReview>
                     ))}
                   </tbody>
