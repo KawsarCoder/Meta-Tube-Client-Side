@@ -6,7 +6,7 @@ import Carousel from "./Carousel/Carousel";
 const Home = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://meta-tube-server.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

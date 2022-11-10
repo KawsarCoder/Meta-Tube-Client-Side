@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SingleReview = ({ review, handleDelete }) => {
-  const { _id, serviceName, message } = review;
-
+  const { _id, service, serviceName, message } = review;
+console.log(service);
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
       <td className="py-4 font-bold px-6">{serviceName}</td>

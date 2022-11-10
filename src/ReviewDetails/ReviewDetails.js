@@ -7,7 +7,7 @@ const ReviewDetails = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+    fetch(`https://meta-tube-server.vercel.app/reviews?email=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("user-token")}`,
       },
@@ -26,8 +26,11 @@ const ReviewDetails = () => {
   const handleDelete = (id) => {
     const process = window.confirm("Are sure to remove this review");
     if (process) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
+      fetch(`https://meta-tube-server.vercel.app/reviews/${id}`, {
         method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("user-token")}`,
+        },
       })
         .then((res) => res.json())
         .then((data) => {

@@ -34,14 +34,9 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/services/:id",
-        element: (
-          <PrivateRoute>
-            {" "}
-            <ServiceDetails></ServiceDetails>
-          </PrivateRoute>
-        ),
+        element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(`https://meta-tube-server.vercel.app/services/${params.id}`),
       },
       {
         path: "/login",
@@ -63,7 +58,7 @@ export const routes = createBrowserRouter([
         path: "/reviews/:id",
         element: <UpdateReview></UpdateReview>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/reviews/${params.id}`),
+          fetch(`https://meta-tube-server.vercel.app/reviews/${params.id}`),
       },
       {
         path: "/service/add",

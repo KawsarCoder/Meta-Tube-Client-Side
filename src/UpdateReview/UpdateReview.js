@@ -6,10 +6,11 @@ const UpdateReview = () => {
   const [reviews, setReviews] = useState(currentReview?.message);
   const handleUpdateReview = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:5000/reviews/${currentReview?._id}`, {
+    fetch(`https://meta-tube-server.vercel.app/reviews/${currentReview?._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("user-token")}`,
       },
       body: JSON.stringify(reviews),
     })

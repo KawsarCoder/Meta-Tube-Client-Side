@@ -6,10 +6,11 @@ const AddService = () => {
   const handleAddService = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:5000/services", {
+    fetch("https://meta-tube-server.vercel.app/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("user-token")}`,
       },
       body: JSON.stringify(service),
     })
