@@ -25,7 +25,7 @@ const Footer = () => {
               <ul className="text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
                   <a href="/" className="hover:underline">
-                    Flowbite
+                    Meta Tube
                   </a>
                 </li>
                 <li>
@@ -76,7 +76,7 @@ const Footer = () => {
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2022{" "}
             <a href="/" className="hover:underline">
-              Flowbite™
+              Meta Tube
             </a>
             . All Rights Reserved.
           </span>

@@ -20,7 +20,11 @@ const ServiceDetails = () => {
 
   return (
     <div>
-      <h1>service details page</h1>
+      <div className="grid grid-cols-1 justify-items-center">
+        <h2 className="text-center text-xl font-bold my-10 text-rose-500 border-b-4 border-blue-300 p-5 w-80">
+          Details of {title}
+        </h2>
+      </div>
       <div className="grid grid-cols-12">
         <div className="max-w-5/3 lg:col-start-5 lg:col-end-9 md:col-start-4 md:col-end-9 sm:col-start-1 sm:col-end-13 col-start-1 col-end-13 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
           <PhotoProvider>
@@ -50,10 +54,19 @@ const ServiceDetails = () => {
       </div>
 
       <div className="text-center my-5">
-        <h4>Reviews</h4>
+        <div className="grid grid-cols-1 justify-items-center">
+          <h2 className="text-center text-xl font-bold mt-10 text-rose-500 border-b-4 border-blue-300 p-5 w-72">
+            Update Review
+          </h2>
+        </div>
         <div>
           <Reviews></Reviews>
         </div>
+      </div>
+      <div className="grid grid-cols-1 justify-items-center">
+        <h2 className="text-center text-xl font-bold mt-10 text-rose-500 border-b-4 border-blue-300 p-5 w-72">
+          All Review
+        </h2>
       </div>
       <div className="grid grid-cols-1 gap-5">
         {reviews.map((review) => (

@@ -6,7 +6,7 @@ import SingleReview from "./SingleReview/SingleReview";
 const ReviewDetails = () => {
   const { user, userLogOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
-  useTitle("User-Reviews")
+  useTitle("User-Reviews");
 
   useEffect(() => {
     fetch(`https://meta-tube-server.vercel.app/reviews?email=${user?.email}`, {
@@ -50,7 +50,11 @@ const ReviewDetails = () => {
     <div>
       {reviews.length > 0 ? (
         <>
-          <h1>Your all reviews</h1>
+          <div className="grid grid-cols-1 justify-items-center">
+            <h2 className="text-center text-xl font-bold mt-10 text-rose-500 border-b-4 border-blue-300 p-5 w-72">
+              Your Review
+            </h2>
+          </div>
           <div className="grid grid-cols-12 mb-10 mt-5">
             <div className="lg:col-start-3 lg:col-end-11 col-start-2 col-end-12">
               <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
@@ -87,7 +91,11 @@ const ReviewDetails = () => {
         </>
       ) : (
         <>
-          <h1>no review</h1>
+          <div className="grid grid-cols-1 justify-items-center">
+            <h2 className="text-center text-xl font-bold mt-10 text-rose-500 border-b-4 border-blue-300 p-5 w-72">
+              You don't give any review
+            </h2>
+          </div>
         </>
       )}
     </div>

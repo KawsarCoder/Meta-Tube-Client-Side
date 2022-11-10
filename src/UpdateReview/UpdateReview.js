@@ -36,16 +36,18 @@ const UpdateReview = () => {
   return (
     <div className="grid grid-cols-12">
       <div className="col-start-3 col-end-10 text-center">
-        <h1 className="font-bold">
-          Your review for{" "}
+        <h1 className="font-bold text-xl mt-20">
+          Your recent review for{" "}
           <span className="text-rose-500">{currentReview.serviceName}</span>
         </h1>
-        <p>{currentReview.message}</p>
-        <form onSubmit={handleUpdateReview}>
+        <p className="text-gray-700 font-semibold mt-3">
+          {currentReview.message}
+        </p>
+        <form className="mt-20" onSubmit={handleUpdateReview}>
           <div>
             <label
               htmlFor="message"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+              className="block text-lg font-semibold mb-2  text-gray-700 dark:text-gray-400"
             >
               Update your review
             </label>
@@ -55,7 +57,7 @@ const UpdateReview = () => {
               rows="4"
               name="message"
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Leave a comment..."
+              placeholder="Leave your review..."
             ></textarea>
           </div>
 
