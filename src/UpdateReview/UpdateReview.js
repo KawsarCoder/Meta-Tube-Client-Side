@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../Hooks/useTitle";
 
 const UpdateReview = () => {
   const currentReview = useLoaderData();
   const [reviews, setReviews] = useState(currentReview?.message);
+  useTitle("Update-Review");
+
   const handleUpdateReview = (event) => {
     event.preventDefault();
     fetch(`https://meta-tube-server.vercel.app/reviews/${currentReview?._id}`, {

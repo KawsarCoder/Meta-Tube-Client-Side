@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import useTitle from "../Hooks/useTitle";
 import SingleReview from "./SingleReview/SingleReview";
 
 const ReviewDetails = () => {
   const { user, userLogOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+  useTitle("User-Reviews")
 
   useEffect(() => {
     fetch(`https://meta-tube-server.vercel.app/reviews?email=${user?.email}`, {

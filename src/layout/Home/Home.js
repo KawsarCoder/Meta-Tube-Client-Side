@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 import Card from "../../Card/Card";
 import Carousel from "./Carousel/Carousel";
 import Overview from "./Overview/Overview";
@@ -7,6 +8,7 @@ import Pricing from "./Pricing/Pricing";
 
 const Home = () => {
   const [services, setServices] = useState([]);
+  useTitle("Home");
   useEffect(() => {
     fetch("https://meta-tube-server.vercel.app/services")
       .then((res) => res.json())

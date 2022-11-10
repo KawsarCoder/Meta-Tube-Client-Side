@@ -5,9 +5,11 @@ import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import Reviews from "../Reviews/Reviews";
 import PublicReviews from "../PublicReviews/PublicReviews";
+import useTitle from "../Hooks/useTitle";
 
 const ServiceDetails = () => {
   const { title, _id, description, price, img } = useLoaderData();
+  useTitle("Service-Details");
 
   const [reviews, setReviews] = useState([]);
   useEffect(() => {

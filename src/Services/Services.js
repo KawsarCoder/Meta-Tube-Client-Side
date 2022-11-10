@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
+import useTitle from "../Hooks/useTitle";
 
 const Services = () => {
   const [services, setServices] = useState([]);
-
+  useTitle("services");
   useEffect(() => {
     fetch("https://meta-tube-server.vercel.app/services")
       .then((res) => res.json())
