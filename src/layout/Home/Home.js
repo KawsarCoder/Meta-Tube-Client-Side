@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Card from "../../Card/Card";
 import Carousel from "./Carousel/Carousel";
+import Overview from "./Overview/Overview";
+import Pricing from "./Pricing/Pricing";
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -38,6 +40,17 @@ const Home = () => {
             More services
           </button>
         </Link>
+      </div>
+      <div>
+        <Overview></Overview>
+      </div>
+      <div>
+        <div className="grid grid-cols-1 justify-items-center">
+          <h2 className="text-center text-xl font-bold text-rose-500 border-b-4 border-blue-300 p-5 w-72">
+            Subscription plan
+          </h2>
+        </div>
+        <Pricing></Pricing>
       </div>
     </div>
   );

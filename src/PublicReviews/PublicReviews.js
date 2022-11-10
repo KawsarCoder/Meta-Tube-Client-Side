@@ -12,7 +12,7 @@ const PublicReviews = ({ review, cardId }) => {
           {reviews.map((rev) => (
             <>
               <div>
-                <figure className="mx-auto max-w-screen-md text-center">
+                <figure className="mx-auto bg-rose-50 rounded-lg p-10 my-3 max-w-screen-md text-center">
                   <svg
                     aria-hidden="true"
                     className="mx-auto mb-3 w-6 h-63 text-gray-400 dark:text-gray-600"
@@ -30,13 +30,13 @@ const PublicReviews = ({ review, cardId }) => {
                       {rev.message}
                     </p>
                   </blockquote>
-                  <figcaption className="flex justify-center items-center mt-6 space-x-3">
+                  <figcaption className="lg:flex grid justify-items-center justify-center items-center mt-6 space-x-3">
                     <img
                       className="w-6 h-6 rounded-full"
                       src={rev.photoURL}
                       alt="profile"
                     />
-                    <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                    <div className="lg:flex grid items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
                       <cite className="pr-3 font-medium text-gray-900 dark:text-white">
                         {rev.userName}
                       </cite>

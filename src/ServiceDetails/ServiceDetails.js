@@ -52,15 +52,15 @@ const ServiceDetails = () => {
         <div>
           <Reviews></Reviews>
         </div>
-        <div className="grid grid-cols-3">
-          {reviews.map((review) => (
-            <PublicReviews
-              key={review._id}
-              cardId={_id}
-              review={review}
-            ></PublicReviews>
-          ))}
-        </div>
+      </div>
+      <div className="grid grid-cols-1 gap-5">
+        {reviews.map((review) => (
+          <PublicReviews
+            key={review._id}
+            cardId={_id}
+            review={review}
+          ></PublicReviews>
+        ))}
       </div>
     </div>
   );
