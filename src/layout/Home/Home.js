@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     fetch("http://localhost:5000/services")
       .then((res) => res.json())
-      .then((data) => setServices(data).limit(3));
+      .then((data) => setServices(data));
   }, []);
   return (
     <div>
