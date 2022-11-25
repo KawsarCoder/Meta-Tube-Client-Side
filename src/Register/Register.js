@@ -1,16 +1,19 @@
 import React from "react";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import useTitle from "../Hooks/useTitle";
 
 const Register = () => {
   const [error, setError] = useState("");
   const { createUser, updateLoginProfile } = useContext(AuthContext);
-  useTitle('Register')
+  useTitle("Register");
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const userSubmit = (event) => {
     console.log(event);
     event.preventDefault();
@@ -23,11 +26,25 @@ const Register = () => {
     createUser(email, password, name)
       .then((result) => {
         const user = result.user;
-        console.log(user);
-        form.reset();
-        updateUserProfile(name, photoURL);
-        setError("");
-        navigate("/");
+        const currentUser = {
+          email: user.email,
+        };
+
+        fetch("https://meta-tube-server.vercel.app/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            form.reset();
+            localStorage.setItem("user-token", data.token);
+            updateUserProfile(name, photoURL);
+            setError("");
+            navigate(from, { replace: true });
+          });
       })
       .catch((e) => {
         console.log(e);
