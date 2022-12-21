@@ -3,11 +3,11 @@ import React from "react";
 const Overview = () => {
   return (
     <div className="grid grid-cols-12 my-6">
-      <div className="w-full col-start-2 col-end-12 bg-white rounded-lg border shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-full col-start-1 col-end-13 bg-white rounded-lg border shadow-md dark:bg-gray-800 dark:border-gray-700">
         <ul className="hidden text-sm font-medium text-center text-gray-500 rounded-lg divide-x divide-gray-200 sm:flex dark:divide-gray-600 dark:text-gray-400">
           <li className="w-full">
-            <button className="inline-block text-lg font-bold p-4 w-full bg-gray-50 rounded-tl-lg hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500">
-              Statistics
+            <button className="inline-block text-3xl font-bold p-4 w-full bg-gray-50 rounded-tl-lg hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500">
+              Overview
             </button>
           </li>
         </ul>

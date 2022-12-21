@@ -17,11 +17,10 @@ const ServiceDetails = () => {
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
-
   return (
     <div>
       <div className="grid grid-cols-1 justify-items-center">
-        <h2 className="text-center text-xl font-bold my-10 text-rose-500 border-b-4 border-blue-300 p-5 w-80">
+        <h2 className="text-center text-2xl font-bold my-10 text-rose-500 border-b-4 border-blue-300 p-5 w-80">
           Details of {title}
         </h2>
       </div>
@@ -48,14 +47,14 @@ const ServiceDetails = () => {
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
               {description}
             </p>
-            <h5>{price}</h5>
+            <h5 className="text-blue-600 font-bold">{price} $</h5>
           </div>
         </div>
       </div>
 
       <div className="text-center my-5">
         <div className="grid grid-cols-1 justify-items-center">
-          <h2 className="text-center text-xl font-bold mt-10 text-rose-500 border-b-4 border-blue-300 p-5 w-72">
+          <h2 className="text-center text-2xl font-bold mt-10 text-rose-500 border-b-4 border-blue-300 p-5 w-72">
             Update Review
           </h2>
         </div>
@@ -63,8 +62,9 @@ const ServiceDetails = () => {
           <Reviews></Reviews>
         </div>
       </div>
+
       <div className="grid grid-cols-1 justify-items-center">
-        <h2 className="text-center text-xl font-bold mt-10 text-rose-500 border-b-4 border-blue-300 p-5 w-72">
+        <h2 className="text-center text-2xl font-bold mt-10 text-rose-500 border-b-4 border-blue-300 p-5 w-72">
           All Review
         </h2>
       </div>

@@ -13,7 +13,11 @@ const Services = () => {
 
   return (
     <div className="text-center">
-      <h1>service</h1>
+      <div className="grid grid-cols-1 justify-items-center">
+          <h3 className="text-center text-3xl my-5 font-bold text-rose-500 border-b-4 border-blue-300 p-3 mb-5 w-72">
+            Services
+          </h3>
+        </div>
       {services.length > 0 ? (
         <></>
       ) : (
@@ -41,7 +45,7 @@ const Services = () => {
           </div>
         </>
       )}
-      <div className="grid grid-cols-1 md:grid-cols-2 my-5 lg:grid-cols-3 gap-5">
+      <div className="grid lg:w-[1170px] mb-20 m-auto w-full grid-cols-1 md:grid-cols-2 my-5 lg:grid-cols-3 gap-5">
         {services.map((service) => (
           <Card key={service._id} service={service}></Card>
         ))}

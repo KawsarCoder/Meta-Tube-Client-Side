@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import useTitle from "../Hooks/useTitle";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const UpdateReview = () => {
   const currentReview = useLoaderData();
   const [reviews, setReviews] = useState(currentReview?.message);
@@ -20,12 +23,12 @@ const UpdateReview = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("Service added successfully");
           event.target.reset();
         }
       });
   };
 
+  const notify = () => toast("Review Update successfully!");
   const handleReviewChange = (event) => {
     const message = event.target.name;
     const value = event.target.value;
@@ -35,19 +38,21 @@ const UpdateReview = () => {
   };
   return (
     <div className="grid grid-cols-12">
-      <div className="col-start-3 col-end-10 text-center">
-        <h1 className="font-bold text-xl mt-20">
+      <div className="col-start-4 col-end-10 text-center">
+        <h1 className="phoneNumberfont-bold text-2xl mt-20">
           Your recent review for{" "}
-          <span className="text-rose-500">{currentReview.serviceName}</span>
+          <span className="text-rose-500 font-semibold">
+            {currentReview.serviceName}
+          </span>
         </h1>
         <p className="text-gray-700 font-semibold mt-3">
           {currentReview.message}
         </p>
-        <form className="mt-20" onSubmit={handleUpdateReview}>
+        <form className="my-20" onSubmit={handleUpdateReview}>
           <div>
             <label
               htmlFor="message"
-              className="block text-lg font-semibold mb-2  text-gray-700 dark:text-gray-400"
+              className="block text-xl pb-4 font-semibold mb-2  text-gray-700 dark:text-gray-400"
             >
               Update your review
             </label>
@@ -62,11 +67,14 @@ const UpdateReview = () => {
           </div>
 
           <button
+            onClick={notify}
             type="submit"
             className="text-cyan-600 my-6 hover:text-white border border-cyan-500 hover:bg-cyan-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
           >
             Update Review
           </button>
+
+          <ToastContainer />
         </form>
       </div>
     </div>

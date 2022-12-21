@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <div>
       <nav className="bg-blue-50 border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900 border border-b-blue-200">
-        <div className="container flex flex-wrap justify-between items-center mx-auto">
+        <div className="container lg:w-[1170px] w-full flex flex-wrap justify-between items-center mx-auto">
           <a href="/" className="flex items-center">
             <img
               src="https://i.ibb.co/5FcP0SY/attachment-134189141-removebg-preview-removebg-preview.png"

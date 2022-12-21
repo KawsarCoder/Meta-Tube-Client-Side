@@ -2,8 +2,7 @@ import React from "react";
 
 const Pricing = () => {
   return (
-      <div className="grid lg:grid-cols-3 justify-items-center my-10">
-        
+    <div className="grid lg:grid-cols-3 gap-6 justify-items-center mt-10 mb-20">
       <div class="p-4 w-full max-w-sm bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
           Basic plan
@@ -160,7 +159,7 @@ const Pricing = () => {
       </div>
       <div class="p-4 w-full max-w-sm bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
-          Basic plan
+          Advance plan
         </h5>
         <div class="flex items-baseline text-gray-900 dark:text-white">
           <span class="text-3xl font-semibold">$</span>
@@ -314,7 +313,7 @@ const Pricing = () => {
       </div>
       <div class="p-4 w-full max-w-sm bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
-          Basic plan
+          Premium plan
         </h5>
         <div class="flex items-baseline text-gray-900 dark:text-white">
           <span class="text-3xl font-semibold">$</span>

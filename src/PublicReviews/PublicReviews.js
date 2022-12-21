@@ -12,7 +12,7 @@ const PublicReviews = ({ review, cardId }) => {
           {reviews.map((rev) => (
             <>
               <div>
-                <figure className="mx-auto bg-rose-50 rounded-lg p-10 my-3 max-w-screen-md text-center">
+                <figure className="mx-auto bg-rose-50 rounded-lg p-10 mb-20 max-w-screen-md text-center">
                   <svg
                     aria-hidden="true"
                     className="mx-auto mb-3 w-6 h-63 text-gray-400 dark:text-gray-600"

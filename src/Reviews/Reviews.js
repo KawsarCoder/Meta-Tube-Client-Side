@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Reviews = () => {
   const { user } = useContext(AuthContext);
   const { title, _id } = useLoaderData();
@@ -36,14 +39,13 @@ const Reviews = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("Review submitted successfully");
           form.reset();
           navigate(`/services/${_id}`);
         }
       })
       .catch((e) => console.error(e));
   };
-
+  const notify = () => toast("Review submitted successfully!");
   return (
     <div>
       <div className="grid grid-cols-12">
@@ -130,11 +132,15 @@ const Reviews = () => {
                     placeholder="Leave a review..."
                   ></textarea>
                 </div>
-                <button className="relative my-5 inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                <button
+                  onClick={notify}
+                  className="relative my-5 inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
+                >
                   <span className="font-bold relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                     Submit
                   </span>
                 </button>
+                <ToastContainer />
               </div>
             </form>
           ) : (
